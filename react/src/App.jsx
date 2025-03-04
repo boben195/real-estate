@@ -1,11 +1,19 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+import Homepage from "./pages/Homepage";
+import Details from "./pages/Details";
+import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">
-        Here can be your comercial
-      </h1>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/home/:id" element={<Details />} />
+      </Routes>
+      <Footer />
     </div>
   );
 };
